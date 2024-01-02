@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="TempConvert.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+        <div class="form">
+            <form id="tempForm">
+                <div class="form-ele" id="radio-div">
+                    <label for="type" class="form-label">Choose Temperature Type:</label>
+                    <input type="radio" name="type" id="celsius" value="celsius" required>
+                    <label for="celsius">Celsius</label>
+                    <input type="radio" name="type" id="fahrenheit" value="fahrenheit">
+                    <label for="fahrenheit">Fahrenheit</label>
+                </div>
+                <div class="form-ele" id="num-div">
+                    <label for="temp" class="form-label">Enter Temperature:</label>
+                    <input type="number" name="temp" id="temp-inp">
+                </div>
+                <div class="form-ele" id="submit-div">
+                    <button type="submit" class="sbmt-btn">Calculate</button>
+                </div>
+            </form>
+            <div class="container-4 m-3">
+                <div class="" id="result"></div>
+            </div>
+        </div>
+    </div>
+    <script src="TempConvert.js"></script>
+</body>
+
+</html>
