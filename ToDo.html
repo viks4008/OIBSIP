@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            padding: 20px;
+            background-color: rgb(177, 177, 177);
+        }
+
+        h2{
+            margin: 10px;
+        }
+        .right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .right input,
+        textarea {
+            border-radius: 2px;
+            border: solid black 2px;
+            margin: 20px 60px;
+            padding: 10px;
+        }
+
+        input {
+            padding: 5px;
+            height: 30px;
+        }
+
+        .right button {
+            margin-left: 170px;
+            border: solid black 1px;
+            border-radius: 8px;
+            width: 7vw;
+            height: 25px;
+        }
+
+        .left {
+            width: 50vw;
+        }
+
+        .left .head {
+            margin-top: 18px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(60, 60, 60);
+            color: white;
+            padding: 10px;
+            /* flex-direction: column; */
+        }
+        .left hr:first-of-type{
+            border: solid white 2px;
+            height: 1px;
+        }
+        #delete-btn {
+            width: 15px;
+            height: 10px;
+            background-color: rgb(255, 255, 255);
+            color: red;
+            border: solid red 1px;
+        }
+
+        .task-item {
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgb(39, 38, 38);
+            color: white;
+            border-radius: 3px;
+        }
+
+        @media (max-width:750px) {
+            .container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+            }
+
+            .right {
+                margin: 30px 50px 20px 50px;
+            }
+
+            .right button {
+                margin-left: 200px;
+            }
+
+            .left {
+                width: 80vw;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <h2>ToDo List by VD</h2>
+        <div class="container">
+            <div class="right">
+                <input type="text" name="title" id="title" placeholder="Title">
+                <textarea name="Description" id="desc" cols="40" rows="20" placeholder="Description"></textarea>
+                <button type="submit" id="addBtn"> ADD</button>
+            </div>
+            <div class="left" id="taskList">
+                <div class="head">
+                    <span>Title</span>
+                    <span>Discription</span>
+                    <span>Delete</span>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const addBtn = document.getElementById('addBtn');
+            const titleInput = document.getElementById('title');
+            const descInput = document.getElementById('desc');
+            const taskList = document.getElementById('taskList');
+
+
+            addBtn.addEventListener('click', function () {
+                const title = titleInput.value;
+                const description = descInput.value;
+
+                if (title.trim() === '' || description.trim() === '') {
+                    alert('Please enter both Title and Description.');
+                    return;
+                }
+
+                const taskItem = document.createElement('div');
+                taskItem.classList.add('task-item');
+                taskItem.innerHTML = `
+                    <span >${title}</span>
+                    <span >${description}</span>
+                    <button class="delete-btn" style="margin:3px 10px; width: 22px; height: 22px; background-color: white; color: red; border: solid red 1px; border-radius:3px;font-size:10px;">X</button>
+                `;
+                const hr= document.createElement('hr');
+                taskList.appendChild(taskItem);
+                taskList.appendChild(hr);
+                titleInput.value = '';
+                descInput.value = '';
+
+                const deleteBtns = document.querySelectorAll('.delete-btn');
+                deleteBtns.forEach(btn => {
+                    btn.addEventListener('click', function () {
+                        this.parentElement.remove();
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
