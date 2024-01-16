@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Vikram D Dhole</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Staatliches&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        :root {
+            --color-black: #000000;
+            /* --color-white:#FCA311; */
+            /* choose to another color web */
+            --color-white: #e7a844;
+        }
+
+        .container {
+            width: 1400px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .main {
+            width: 100%;
+            height: 100%;
+        }
+
+        .page1 {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .page1 h1 {
+            font-family: 'Staatliches', sans-serif;
+            font-size: 16vw;
+            position: absolute;
+            letter-spacing: 0.18em;
+            text-align: center;
+            color: var(--color-black);
+            opacity: 0.3;
+            pointer-events: none;
+            top: 10vh;
+            left: 2vw;
+            margin-left: 0.75vw;
+        }
+
+        .top {
+            width: 100%;
+            height: 50%;
+            background: var(--color-white);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+            background: var(--color-white);
+            box-shadow: 7px 7px 28px var(--color-white),
+                -7px -7px 28px var(--color-white);
+            padding: 0 2vw;
+        }
+
+        .logo {
+            color: var(--color-black);
+        }
+
+
+        .nav-link ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 4vw;
+        }
+
+        .nav-link ul a {
+            color: var(--color-black);
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            font-size: 1.1vw;
+        }
+
+        .nav-link ul a:hover {
+            color: white;
+        }
+
+        .btn {
+            padding: 0.3vw 2vw;
+            color: var(--color-black);
+            border: 2px solid var(--color-black);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .content {
+            position: absolute;
+            top: 15vw;
+            right: 0;
+            padding-right: 6.5vw;
+            text-align: right;
+            color: var(--color-black);
+        }
+
+        .content h2 {
+            font-size: 2vw;
+            font-weight: 200;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .content h3 {
+            font-size: 3.5vw;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        .portfolio {
+            position: absolute;
+            top: 16vw;
+            left: 5vw;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3.5px;
+        }
+
+        .portfolio span {
+            color: var(--color-black);
+            font-weight: 500;
+            font-size: 1vw;
+            transform: rotate(-90deg);
+        }
+
+        .footer-up {
+            width: 100%;
+            height: 50%;
+            background-color: var(--color-black);
+        }
+
+        .image img {
+            opacity: 50%;
+            position: absolute;
+            top: 16rem;
+            left: 7.8rem;
+            width: 230px;
+            height: 300px;
+        }
+
+        .footer-content {
+            position: absolute;
+            top: 55%;
+            right: 0;
+            padding-right: 6.5vw;
+            text-align: right;
+            width: 700px;
+            color: var(--color-white);
+        }
+
+        .footer-content p {
+            font-weight: 200;
+            text-align: justify;
+            margin-bottom: 2vw;
+        }
+
+        .btn-primary {
+            color: var(--color-black);
+            background-color: var(--color-white);
+            box-shadow: 4px 4px 2px #0b0c0e,
+                -4px -4px 2px #687480;
+            border: none;
+        }
+
+        .top .portfolio .white {
+            color: #ecfffd;
+        }
+
+        .About {
+            position: absolute;
+            bottom: 0;
+            left: 30%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            background-color: var(--color-white);
+            padding: 2vw 4vw;
+            box-shadow: 8px 8px 5px #15181b,
+                -8px -8px 5px #2d3237;
+        }
+
+        .About span {
+            color: var(--color-black);
+            font-weight: 600;
+            font-size: 1vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="page1">
+            <h1>VIKRAM</h1>
+            <div class="top">
+                <div class="header container">
+                    <div class="logo">
+                        <h2>VIKRAM<span> DHOLE</span></h2>
+                    </div>
+                    <div class="nav-link">
+                        <ul>
+                            <li><a href="#" style="color:white;">Home</a></li>
+                            <li><a href="#">Career</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </div>
+                    <div class="back">
+                        <a href="#" class="btn">Join</a>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>Passionate Coder</h2>
+                    <h3>MCA</h3>
+                </div>
+                <div class="portfolio">
+
+                    <span>E</span>
+                    <span>L</span>
+                    <span>O</span>
+                    <span>H</span>
+                    <span>D</span>
+                    <span> </span>
+                    <span class="white">M</span>
+                    <span class="white">A</span>
+                    <span class="white">R</span>
+                    <span class="white">K</span>
+                    <span class="white">I</span>
+                    <span class="white">V</span>
+                </div>
+            </div>
+            <div class="footer-up">
+                <div class="image">
+                    <img src="./MY_PASSPORT_PHOTO-removebg-preview.png" alt="">
+                </div>
+                <div class="footer-content">
+                    <p>
+                        Myself vikram Dilip Dhole. I'm from morgaon which location in baramati taluka of pune district.
+                        I had completed Bacholer degree in Comp Appl with 79% at Vidya pratishthan's college baramati
+                        which comes under pune university and HSC at Waghire College Saswad.
+                        Site In that project I used HTML, CSS, JS language and create clone website.
+                        My hobbeis are traveling and reading.</p>
+                    <a href="#" class="btn btn-primary">Connect</a>
+                </div>
+
+                <div class="About">
+                    <span>Intelligant |</span>
+                    <span>Team Management |</span>
+                    <span>Hard Working |</span>
+                    <span>Passionate |</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js">
+        var tl = gsap.timeline()
+
+        tl.from(".logo h2, .nav-link ul, .back", {
+            y: -100,
+            duration: 1,
+            delay: 0.5,
+            opacity: 0,
+            stagger: 0.5
+        })
+
+        tl.from(".image img", {
+            x: -50,
+            duration: 0.4,
+            opacity: 0,
+            blur: 1,
+            scale: 0.8
+        })
+
+        tl.from(".content h2, .content h3", {
+            y: 50,
+            duration: 0.8,
+            opacity: 0,
+            stagger: 0.5
+        })
+
+        tl.from(".footer-content", {
+            x: 100,
+            duration: 0.8,
+            opacity: 0,
+            stagger: 0.5
+        })
+
+        tl.from(".About span", {
+            y: 100,
+            duration: 0.5,
+            opacity: 0,
+            stagger: 0.3
+        })</script>
+</body>
+
+</html>
